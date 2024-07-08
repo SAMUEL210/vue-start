@@ -28,18 +28,15 @@
             <form class="d-flex">
                 <button 
                     class="btn btn-primary"
-                    @click.prevent="theme = theme == 'light' ? 'dark' : 'light'"
+                    @click.prevent="changeTheme()"
                     >Toogle Nav</button>
             </form>
         </div>
     </nav>
 
-    <div id="app" class="container">
-        <h1>{{pages[activePage].pageTitle}}</h1>
-        <p>{{pages[activePage].pageDescription}}</p>
-    </div>
+    <page-viewer :page="pages[activePage]"></page-viewer>
     <script>
-        Vue.createApp({
+        var app = Vue.createApp({
             // computed: {
             //     navbarClasses(){
             //         return {
@@ -79,8 +76,27 @@
                         }
                     ]
                 });
+            },
+            methods: {
+                changeTheme(){
+                    let theme = 'light';
+                    if(this.theme == 'light'){
+                        theme = 'dark';
+                    }
+
+                    this.theme = theme;
+                }
             }
-        }).mount("body");
+        });
+
+        app.component('page-viewer', {
+            props: ['page'],
+            template : `<div class="container">
+                <h1>{{page.pageTitle}}</h1>
+                <p>{{page.pageDescription}}</p>
+            </div>`
+        });
+        app.mount("body");
     </script>
 </body>
 </html>
