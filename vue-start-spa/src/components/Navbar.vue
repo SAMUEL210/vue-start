@@ -24,6 +24,9 @@ export default {
         NavbarLink
     },
     props: ['pages', 'activePage', 'navLinkClick'],
+    created(){
+        this.getThemeSetting();
+    },
     data() {
         return {
             theme: 'dark',
@@ -37,6 +40,17 @@ export default {
             }
 
             this.theme = theme;
+            this.storeThemeSetting();
+        },
+        storeThemeSetting(){
+            localStorage.setItem('theme', this.theme);
+        },
+        getThemeSetting(){
+            let theme = localStorage.getItem('theme');
+
+            if(theme){
+                this.theme = theme;
+            }
         }
     }
 }
