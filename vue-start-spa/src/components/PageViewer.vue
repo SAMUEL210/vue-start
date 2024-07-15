@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" >
         <h1>{{ page.pageTitle }}</h1>
         <p>{{ page.pageDescription }}</p>
     </div>
