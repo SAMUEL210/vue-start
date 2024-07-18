@@ -3,7 +3,7 @@
     </navbar>
 
     <!-- <page-viewer  :page="pages[activePage]"></page-viewer> -->
-     <create-page :page-created="pageCreated"></create-page>
+     <create-page @page-created="pageCreated"></create-page>
 </template>
 
 <script>
@@ -27,15 +27,15 @@ export default {
         })
     },
     methods: {
-      async getPages(){
-        let res = await fetch('pages.json')
-        let data = await res.json()
+        async getPages(){
+            let res = await fetch('pages.json')
+            let data = await res.json()
 
-        this.pages = data;
-      },
+            this.pages = data;
+        },
         pageCreated(pageObj){
-            this.pages.push(pageObj);
-      }
+            this.pages.push(pageObj)
+        }
     }
 }
 </script>

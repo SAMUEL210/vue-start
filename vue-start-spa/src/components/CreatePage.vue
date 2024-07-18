@@ -71,7 +71,6 @@
 <script>
 
 export default {
-    props: [ 'pageCreated' ],
     computed: {
         isFormInvalid(){
             return!this.pageTitle || !this.pageDescription || !this.linkText || !this.linkUrl;
@@ -93,7 +92,7 @@ export default {
                 return;
             }
 
-            this.pageCreated({
+            this.$emit('pageCreated', {
                 pageTitle: this.pageTitle,
                 pageDescription: this.pageDescription,
                 link: {
@@ -117,6 +116,10 @@ export default {
         pageTitle(newTitle, oldTitle){
             if(this.linkText === oldTitle){
                 this.linkText = newTitle;
+            }
+
+            if(this.linkUrl === oldTitle){
+                this.linkUrl = newTitle.toLowerCase();
             }
         }
     }
