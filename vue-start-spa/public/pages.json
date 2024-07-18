@@ -5,7 +5,8 @@
             "url": "index.html"
         },
         "pageTitle": "Home Page",
-        "pageDescription": "Ceci est la page d'accueil!"
+        "pageDescription": "Ceci est la page d'accueil!",
+        "published": true
     },
     {
         "link": {
@@ -13,7 +14,8 @@
             "url": "about.html"
         },
         "pageTitle": "About page",
-        "pageDescription": "Ceci est la page About"
+        "pageDescription": "Ceci est la page About",
+        "published": true
     },
     {
         "link": {
@@ -21,7 +23,8 @@
             "url": "contact.html"
         },
         "pageTitle": "Contact page",
-        "pageDescription": "Ceci est la page Contact"
+        "pageDescription": "Ceci est la page Contact",
+        "published": true
     },
     {
         "link": {
@@ -29,6 +32,7 @@
             "url": "blog.html"
         },
         "pageTitle": "Blog page",
-        "pageDescription": "Ceci est la page Blog"
+        "pageDescription": "Ceci est la page Blog",
+        "published": false
     }
 ]
